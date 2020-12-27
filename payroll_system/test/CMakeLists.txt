@@ -16,7 +16,7 @@ target_link_libraries(TestAddHourlyEmployee PRIVATE -lpthread LIB_PAYROLLSYSTEM)
 add_test(NAME TestAddHourlyEmployee COMMAND TestAddHourlyEmployee)
 
 # 成果報酬型社員のトランザクション追加
-#add_executable(TestAddHourlyEmployee TestAddHourlyEmployee.cpp)
-#target_link_libraries(TestAddHourlyEmployee PRIVATE GTest::GTest GTest::Main )
-#target_link_libraries(TestAddHourlyEmployee PRIVATE -lpthread LIB_PAYROLLSYSTEM)
-#add_test(NAME TestAddHourlyEmployee COMMAND TestAddHourlyEmployee)
+add_executable(TestAddCommissionedEmployee TestAddCommissionedEmployee.cpp)
+target_link_libraries(TestAddCommissionedEmployee PRIVATE GTest::GTest GTest::Main )
+target_link_libraries(TestAddCommissionedEmployee PRIVATE -lpthread LIB_PAYROLLSYSTEM)
+add_test(NAME TestAddCommissionedEmployee COMMAND TestAddCommissionedEmployee)

@@ -15,12 +15,12 @@ extern PayrollDatabase GpayrollDatabase;
 
 TEST(TestAddHourlyEmployee, Basic)
 {
-    int empId = 1;
-    AddHourlyEmployee t(empId, "Bob", "Home", 1500.00);
+    int empId = 2;
+    AddHourlyEmployee t(empId, "Tom", "Home", 1500.00);
     t.Execute();
 
     Employee* e = GpayrollDatabase.GetEmployee(empId);
-    EXPECT_EQ("Bob", e->GetName());
+    EXPECT_EQ("Tom", e->GetName());
 
     PaymentClassification* pc = e->GetClassification();
     HourlyClassification* hc = dynamic_cast<HourlyClassification*>(pc);
