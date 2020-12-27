@@ -1,23 +1,37 @@
+#include "AddSalariedEmployee.h"
+#include "Employee.h"
+#include "HoldMethod.h"
+#include "MonthlySchedule.h"
+#include "PaymentClassification.h"
+#include "PaymentMethod.h"
+#include "PaymentSchedule.h"
+#include "PayrollDatabase.h"
+#include "SalariedClassification.h"
+#include "gtest/gtest.h"
 
+using namespace std;
 
-void PayrollTest::TestAddSalariedEmployee()
+extern PayrollDatabase GpayrollDatabase;
+
+TEST(TestAddSalariedEmployee, Basic)
 {
     int empId = 1;
     AddSalariedEmployee t(empId, "Bob", "Home", 10000.00);
     t.Execute();
+
     Employee* e = GpayrollDatabase.GetEmployee(empId);
-    assert("Bob" == e->GetName);
+    EXPECT_EQ("Bob", e->GetName());
 
     PaymentClassification* pc = e->GetClassification();
-    SalariedCkassificatinon* sc = dynamic_cast<PaymentClassification*>(pc);
-    assert(sr);
-    aseertEquals(10000.00, sc->GetSalary(), .001);
+    SalariedClassification* sc = dynamic_cast<SalariedClassification*>(pc);
+    ASSERT_NE(nullptr, sc);
+    EXPECT_DOUBLE_EQ(10000.00, sc->GetSalary());
 
     PaymentSchedule* ps = e->GetSchedule();
-    MonthlySchedule* ms = dynamic_cast<PaymentSchedule*>(pc);
-    assert(ms);
+    MonthlySchedule* ms = dynamic_cast<MonthlySchedule*>(ps);
+    ASSERT_NE(nullptr, ms);
 
     PaymentMethod* pm = e->GetMethod();
-    HoldMethod* hm = dynamic_cast<PaymentMethod*>(pc);
-    assert(hm);
+    HoldMethod* hm = dynamic_cast<HoldMethod*>(pm);
+    ASSERT_NE(nullptr, hm);
 }

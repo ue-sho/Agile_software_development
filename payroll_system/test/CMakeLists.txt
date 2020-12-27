@@ -4,9 +4,8 @@ find_package(GTest REQUIRED)
 include(GoogleTest)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-include_directories(${PROJECT_SOURCE_DIR}/src)
+add_executable(TestAddSalariedEmployee TestAddSalariedEmployee.cpp)
+target_link_libraries(TestAddSalariedEmployee PRIVATE GTest::GTest GTest::Main )
+target_link_libraries(TestAddSalariedEmployee PRIVATE -lpthread LIB_PAYROLLSYSTEM)
 
-add_executable(TestAdd add_test.cpp)
-target_link_libraries(TestAdd PRIVATE GTest::GTest GTest::Main)
-
-add_test(NAME Add_test COMMAND TestAdd)
+add_test(NAME TestAddSalariedEmployee COMMAND TestAddSalariedEmployee)
