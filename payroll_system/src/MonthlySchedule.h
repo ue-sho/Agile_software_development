@@ -5,7 +5,7 @@
 
 class MonthlySchedule : public PaymentSchedule {
 public:
-    virtual ~MonthlySchedule(){};
+    virtual ~MonthlySchedule();
 };
 
 #endif

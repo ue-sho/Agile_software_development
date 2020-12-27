@@ -1,11 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
 
 add_library(LIB_PAYROLLSYSTEM
+            Employee.cpp
             PayrollDatabase.cpp
             AddEmployeeTransaction.cpp
             AddSalariedEmployee.cpp
             SalariedClassification.cpp
-            Employee.cpp
+            MonthlySchedule.cpp
+            AddHourlyEmployee.cpp
+            HourlyClassification.cpp
+            WeeklySchedule.cpp
 #  　         AddHourlyEmployee.cpp
 # 　          AddCommissionedEmployee.cpp
 )
