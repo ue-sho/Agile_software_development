@@ -18,6 +18,9 @@ add_library(LIB_PAYROLLSYSTEM
             BiweeklySchedule.cpp
 
             DeleteEmployeeTransaction.cpp
+
+            TimeCard.cpp
+            TimeCardTransaction.cpp
 )
 
 # add_executable(payroll_system main.cpp)

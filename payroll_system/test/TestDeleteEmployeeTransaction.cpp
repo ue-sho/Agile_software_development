@@ -8,7 +8,7 @@ using namespace std;
 
 extern PayrollDatabase GpayrollDatabase;
 
-TEST(TestAddCommissionedEmployee, Basic)
+TEST(DeleteEmployeeTransaction, Basic)
 {
     int empId = 4;
     AddCommissionedEmployee t(empId, "Lance", "Home", 2500, 3.2);
