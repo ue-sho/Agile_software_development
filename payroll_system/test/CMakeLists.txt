@@ -20,3 +20,9 @@ add_executable(TestAddCommissionedEmployee TestAddCommissionedEmployee.cpp)
 target_link_libraries(TestAddCommissionedEmployee PRIVATE GTest::GTest GTest::Main )
 target_link_libraries(TestAddCommissionedEmployee PRIVATE -lpthread LIB_PAYROLLSYSTEM)
 add_test(NAME TestAddCommissionedEmployee COMMAND TestAddCommissionedEmployee)
+
+# トランザクション削除
+add_executable(DeleteEmployeeTransaction TestDeleteEmployeeTransaction.cpp)
+target_link_libraries(DeleteEmployeeTransaction PRIVATE GTest::GTest GTest::Main )
+target_link_libraries(DeleteEmployeeTransaction PRIVATE -lpthread LIB_PAYROLLSYSTEM)
+add_test(NAME DeleteEmployeeTransaction COMMAND DeleteEmployeeTransaction)

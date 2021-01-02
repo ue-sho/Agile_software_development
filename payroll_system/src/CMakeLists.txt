@@ -16,6 +16,8 @@ add_library(LIB_PAYROLLSYSTEM
             AddCommissionedEmployee.cpp
             CommissionedClassification.cpp
             BiweeklySchedule.cpp
+
+            DeleteEmployeeTransaction.cpp
 )
 
 # add_executable(payroll_system main.cpp)
