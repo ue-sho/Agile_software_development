@@ -9,7 +9,7 @@ public:
     double GetHours();
 
 private:
-    long itsDate;
+    long itsDate;  // TODO: 後々Dateクラスを使う
     double itsHours;
 };
 
