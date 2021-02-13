@@ -10,9 +10,9 @@ public:
     void Execute();
 
 private:
-    int itsEmpId;
-    long itsDate;
+    long itsDate;  // TODO : Data型にする
     double itsHours;
+    int itsEmpId;
 };
 
 #endif

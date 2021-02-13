@@ -21,6 +21,9 @@ add_library(LIB_PAYROLLSYSTEM
 
             TimeCard.cpp
             TimeCardTransaction.cpp
+
+            SalesReceipt.cpp
+            SalesReceiptTransaction.cpp
 )
 
 # add_executable(payroll_system main.cpp)

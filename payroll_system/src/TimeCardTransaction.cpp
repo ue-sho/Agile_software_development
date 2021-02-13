@@ -19,16 +19,17 @@ TimeCardTransaction::TimeCardTransaction(long date, double hours, int empId)
 void TimeCardTransaction::Execute()
 {
     Employee* e = GpayrollDatabase.GetEmployee(itsEmpId);
-    if (e) {
-        PaymentClassification* pc = e->GetClassification();
-        if (HourlyClassification* hc = dynamic_cast<HourlyClassification*>(pc)) {
-            hc->AddTimeCard(new TimeCard(itsDate, itsHours));
-        }
-        else {
-            throw("Tried to add timecard to non-hourly employee");
-        }
-    }
-    else {
+    if (!e) {
         throw("No such employee.");
+        return;
     }
+
+    PaymentClassification* pc = e->GetClassification();
+    HourlyClassification* hc = dynamic_cast<HourlyClassification*>(pc);
+    if (!hc) {
+        throw("Tried to add timecard to non-hourly employee");
+        return;
+    }
+
+    hc->AddTimeCard(new TimeCard(itsDate, itsHours));
 }

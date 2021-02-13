@@ -32,3 +32,9 @@ add_executable(TimeCardTransaction TestTimeCardTransaction.cpp)
 target_link_libraries(TimeCardTransaction PRIVATE GTest::GTest GTest::Main )
 target_link_libraries(TimeCardTransaction PRIVATE -lpthread LIB_PAYROLLSYSTEM)
 add_test(NAME TimeCardTransaction COMMAND TimeCardTransaction)
+
+# 売り上げレシートトランザクションの追加
+add_executable(SalesReceiptTransaction TestSalesReceiptTransaction.cpp)
+target_link_libraries(SalesReceiptTransaction PRIVATE GTest::GTest GTest::Main )
+target_link_libraries(SalesReceiptTransaction PRIVATE -lpthread LIB_PAYROLLSYSTEM)
+add_test(NAME SalesReceiptTransaction COMMAND SalesReceiptTransaction)
