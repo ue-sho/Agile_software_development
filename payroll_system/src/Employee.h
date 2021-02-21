@@ -6,6 +6,7 @@
 class PaymentMethod;
 class PaymentSchedule;
 class PaymentClassification;
+class Affiliation;
 
 class Employee {
 public:
@@ -18,6 +19,8 @@ public:
     PaymentClassification *GetClassification() const;
     PaymentSchedule *GetSchedule() const;
     PaymentMethod *GetMethod() const;
+    void SetAffiliation(Affiliation *affiliation);
+    Affiliation *GetAffiliation();
 
 private:
     int itsEmpId;
@@ -26,6 +29,7 @@ private:
     PaymentClassification *itsClassification;
     PaymentSchedule *itsSchedule;
     PaymentMethod *itsMethod;
+    Affiliation *itsAffiliation;
 };
 
 #endif

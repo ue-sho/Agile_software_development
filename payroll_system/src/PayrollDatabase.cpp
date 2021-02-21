@@ -4,12 +4,11 @@
 
 PayrollDatabase GpayrollDatabase;
 
+// TODO : データベースに置き換える
 // データベースの実装は「詳細」なので、できるだけ決めるのは先延ばしにする
 // 今の時点ではAPIを設計することにだけ関心がある
 
-PayrollDatabase::~PayrollDatabase()
-{
-}
+PayrollDatabase::~PayrollDatabase() {}
 
 Employee *PayrollDatabase::GetEmployee(int empId)
 {
@@ -29,4 +28,14 @@ void PayrollDatabase::DeleteEmployee(int empId)
 void PayrollDatabase::clear()
 {
     itsEmployees.clear();
+}
+
+void PayrollDatabase::AddUnionMember(int memberId, Employee *e)
+{
+    itsUnionMember[memberId] = e;
+}
+
+Employee *PayrollDatabase::GetUnionMember(int memberId)
+{
+    return itsUnionMember[memberId];
 }

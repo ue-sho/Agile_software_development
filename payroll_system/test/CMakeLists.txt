@@ -21,8 +21,26 @@ target_link_libraries(TestAddCommissionedEmployee PRIVATE GTest::GTest GTest::Ma
 target_link_libraries(TestAddCommissionedEmployee PRIVATE -lpthread LIB_PAYROLLSYSTEM)
 add_test(NAME TestAddCommissionedEmployee COMMAND TestAddCommissionedEmployee)
 
-# トランザクション削除
+# 従業員トランザクション削除
 add_executable(DeleteEmployeeTransaction TestDeleteEmployeeTransaction.cpp)
 target_link_libraries(DeleteEmployeeTransaction PRIVATE GTest::GTest GTest::Main )
 target_link_libraries(DeleteEmployeeTransaction PRIVATE -lpthread LIB_PAYROLLSYSTEM)
 add_test(NAME DeleteEmployeeTransaction COMMAND DeleteEmployeeTransaction)
+
+# タイムカードトランザクションの追加
+add_executable(TimeCardTransaction TestTimeCardTransaction.cpp)
+target_link_libraries(TimeCardTransaction PRIVATE GTest::GTest GTest::Main )
+target_link_libraries(TimeCardTransaction PRIVATE -lpthread LIB_PAYROLLSYSTEM)
+add_test(NAME TimeCardTransaction COMMAND TimeCardTransaction)
+
+# 売り上げレシートトランザクションの追加
+add_executable(SalesReceiptTransaction TestSalesReceiptTransaction.cpp)
+target_link_libraries(SalesReceiptTransaction PRIVATE GTest::GTest GTest::Main )
+target_link_libraries(SalesReceiptTransaction PRIVATE -lpthread LIB_PAYROLLSYSTEM)
+add_test(NAME SalesReceiptTransaction COMMAND SalesReceiptTransaction)
+
+# 売り上げレシートトランザクションの追加
+add_executable(AddServiceCharge TestAddServiceCharge.cpp)
+target_link_libraries(AddServiceCharge PRIVATE GTest::GTest GTest::Main )
+target_link_libraries(AddServiceCharge PRIVATE -lpthread LIB_PAYROLLSYSTEM)
+add_test(NAME AddServiceCharge COMMAND AddServiceCharge)
