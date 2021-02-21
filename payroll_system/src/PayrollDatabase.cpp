@@ -29,3 +29,13 @@ void PayrollDatabase::clear()
 {
     itsEmployees.clear();
 }
+
+void PayrollDatabase::AddUnionMember(int memberId, Employee *e)
+{
+    itsUnionMember[memberId] = e;
+}
+
+Employee *PayrollDatabase::GetUnionMember(int memberId)
+{
+    return itsUnionMember[memberId];
+}

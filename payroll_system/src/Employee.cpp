@@ -41,3 +41,13 @@ PaymentMethod *Employee::GetMethod() const
 {
     return itsMethod;
 }
+
+void Employee::SetAffiliation(Affiliation *affiliation)
+{
+    itsAffiliation = affiliation;
+}
+
+Affiliation *Employee::GetAffiliation()
+{
+    return itsAffiliation;
+}

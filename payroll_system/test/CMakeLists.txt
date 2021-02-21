@@ -38,3 +38,9 @@ add_executable(SalesReceiptTransaction TestSalesReceiptTransaction.cpp)
 target_link_libraries(SalesReceiptTransaction PRIVATE GTest::GTest GTest::Main )
 target_link_libraries(SalesReceiptTransaction PRIVATE -lpthread LIB_PAYROLLSYSTEM)
 add_test(NAME SalesReceiptTransaction COMMAND SalesReceiptTransaction)
+
+# 売り上げレシートトランザクションの追加
+add_executable(AddServiceCharge TestAddServiceCharge.cpp)
+target_link_libraries(AddServiceCharge PRIVATE GTest::GTest GTest::Main )
+target_link_libraries(AddServiceCharge PRIVATE -lpthread LIB_PAYROLLSYSTEM)
+add_test(NAME AddServiceCharge COMMAND AddServiceCharge)
