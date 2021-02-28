@@ -1,38 +1,15 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.18)
 
-add_library(LIB_PAYROLLSYSTEM
-            Employee.cpp
-            PayrollDatabase.cpp
-            AddEmployeeTransaction.cpp
+add_subdirectory(AbstractTransactions)
+add_subdirectory(PayrollDatabase)
+add_subdirectory(PayrollDomain)
+add_subdirectory(PayrollImplementation)
+add_subdirectory(TransactionApplication)
+add_subdirectory(TransactionImplementation)
 
-            AddSalariedEmployee.cpp
-            SalariedClassification.cpp
-            MonthlySchedule.cpp
-
-            AddHourlyEmployee.cpp
-            HourlyClassification.cpp
-            WeeklySchedule.cpp
-
-            AddCommissionedEmployee.cpp
-            CommissionedClassification.cpp
-            BiweeklySchedule.cpp
-
-            DeleteEmployeeTransaction.cpp
-
-            TimeCard.cpp
-            TimeCardTransaction.cpp
-
-            SalesReceipt.cpp
-            SalesReceiptTransaction.cpp
-
-            ServiceCharge.cpp
-            ServiceChargeTransaction.cpp
-
-            Affiliation.cpp
-            NoAffiliation.cpp
-            UnionAffiliation.cpp
-
+target_link_libraries(LIB_TRANSACTION_IMPLEMENTATION
+        LIB_ABSTRACT_TRANSACTIONS
+        LIB_PAYROLL_DATABASE
+        LIB_PAYROLL_DOMAIN
+        LIB_PAYROLL_IMPLEMENTATION
 )
-
-# add_executable(payroll_system main.cpp)
-# target_link_libraries(payroll_system PRIVATE LIB_PAYROLLSYSTEM)
